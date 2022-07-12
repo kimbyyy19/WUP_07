@@ -54,7 +54,11 @@ In the second plot, it shows that the percentage of females who are alive is mor
 
   
 ## Numerical results
-
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
  
 
 ## Inferential results 
