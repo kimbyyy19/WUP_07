@@ -75,8 +75,11 @@ chisqtestGC(table1)
 The chi sq test provides the exact numbers. It shows that 1831 were females and 1411 were males are in the alive group. 25 females died vs 44 males died. The odds of a female dying is (25/1831) and the odds of a male dying is (44/1411). The odds ratio of a male dying to a female is (44/1411)/(25/1831). The odds ratio is 2.3.
 
 
+```{r}
+fisher.test(table1)
+```
 
-
+The fisher test gives us the odd ratio, which we also got by doing the chi sq test. We also see the confidence intervals are 1.4 to 3.9, meaning the odd ratio can go as low as 1.4 or as high as 3.9. 
 
 ## Conclusions
 
