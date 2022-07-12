@@ -1,7 +1,7 @@
 ---
 title: "covid 19"
-author: "Dr K"
-date: "5/2/2020"
+author: "Kimberly Lemus"
+date: "summer 2022"
 output:
   html_document: default
   pdf_document: default
@@ -35,25 +35,42 @@ Table of patients:
 with(kRdata, table(Sex, result))
 
 ```
+## Graphic
 
 ## We create two bar charts - one based on frequency and the other on percent, use ggplot commands to do this
 
-`
+```{r}
+barchartGC(~result + Sex,data=kRdata)
+```
+In this boxplot, we can see that more women are alive than men. Women are more prominent than men. The amount of women and men that died does not substantial. All and all, there were more men that died compared to women. 
 
   
+```{r}
+barchartGC(~result + Sex,data=kRdata, type="percent")
+```
 
-
-
+In the second plot, it shows that the percentage of females who are alive is more than the percentage of males that are alive. As for the dead, it shows that the percentage of males that are dead is about twice as higher as the percentage of females that are dead.
 
 
   
 ## Numerical results
 
+ 
 
 ## Inferential results 
 
 
 
 
+
+
+
+
+
 ## Conclusions
+
+
+
+
+
 
