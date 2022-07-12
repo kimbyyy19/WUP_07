@@ -60,6 +60,10 @@ rowPerc(table1)
 colPerc(table1)
 ```
  
+ We now have the correct percentages, where we can see the percentage of the alive are Female 56% and Male 44%. The percentage of dead are 64% for Male and 36% for Female. We can see there is a backwards relationship between males and females. Females are the predominantly alive group where males were predominantly the dead group. Of all the females 1.4% ended up dead, compared to males, where 3% ended up dead. Males deaths were doubled compared to the rate of women. 
+ 
+ 
+ 
 
 ## Inferential results 
 
