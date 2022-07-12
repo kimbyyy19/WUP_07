@@ -83,7 +83,7 @@ The fisher test gives us the odd ratio, which we also got by doing the chi sq te
 
 ## Conclusions
 
-
+In conclusion, we can see a big statistical difference between males and females vs COVID. Based off our results, more males die of COVID vs females. Our p-value is very small, so therefore we reject the null hypothesis. More importantly we can see that more males die from this disease vs females.
 
 
 
