@@ -72,7 +72,7 @@ chisq.test(table1)
 chisqtestGC(table1)
 ```
 
-
+The chi sq test provides the exact numbers. It shows that 1831 were females and 1411 were males are in the alive group. 25 females died vs 44 males died. The odds of a female dying is (25/1831) and the odds of a male dying is (44/1411). The odds ratio of a male dying to a female is (44/1411)/(25/1831). The odds ratio is 2.3.
 
 
 
