@@ -42,12 +42,16 @@ with(kRdata, table(Sex, result))
 ```{r}
 barchartGC(~result + Sex,data=kRdata)
 ```
+
+
 In this boxplot, we can see that more women are alive than men. Women are more prominent than men. The amount of women and men that died does not substantial. All and all, there were more men that died compared to women. 
 
   
 ```{r}
 barchartGC(~result + Sex,data=kRdata, type="percent")
 ```
+
+
 
 In the second plot, it shows that the percentage of females who are alive is more than the percentage of males that are alive. As for the dead, it shows that the percentage of males that are dead is about twice as higher as the percentage of females that are dead.
 
@@ -59,6 +63,8 @@ table1 <- xtabs(~result + Sex, data=kRdata)
 rowPerc(table1)
 colPerc(table1)
 ```
+ 
+ 
  
  We now have the correct percentages, where we can see the percentage of the alive are Female 56% and Male 44%. The percentage of dead are 64% for Male and 36% for Female. We can see there is a backwards relationship between males and females. Females are the predominantly alive group where males were predominantly the dead group. Of all the females 1.4% ended up dead, compared to males, where 3% ended up dead. Males deaths were doubled compared to the rate of women. 
  
