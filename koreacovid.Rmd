@@ -21,6 +21,7 @@ kRdata <- read.csv(file = 'kRdata.csv')
 Some of the data was uncoded for sex - sex must be just male or female
 77 of the data entries were coded sex  as blank, so we omit these.
 state of a patient must be died or alive - we adjust that as well   
+
   
 # Question 1 - Is dying independent of sex
 
@@ -40,20 +41,20 @@ with(kRdata, table(Sex, result))
 ## We create two bar charts - one based on frequency and the other on percent, use ggplot commands to do this
 
 ```{r}
-barchartGC(~result + Sex,data=kRdata)
+dd2 <- kRdata %>% group_by(result,Sex) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+# the group_by followed by summarize(count=n())
+basicC <- ggplot(dd2,aes(x=result,y=count,fill=Sex))
+basicC + geom_bar(stat="identity",position="dodge")
+#Now for percentage plot
+basicCC <- ggplot(dd2,aes(x=result,y=prcnt*100,fill=Sex)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
 
-In this boxplot, we can see that more women are alive than men. Women are more prominent than men. The amount of women and men that died does not substantial. All and all, there were more men that died compared to women. 
+In this ggplot barchart shows, we can see that more women are alive than men. There were more men that died compared to women. About 65% those that died were male and there were less males observed in the study.
 
   
-```{r}
-barchartGC(~result + Sex,data=kRdata, type="percent")
-```
 
-
-
-In the second plot, it shows that the percentage of females who are alive is more than the percentage of males that are alive. As for the dead, it shows that the percentage of males that are dead is about twice as higher as the percentage of females that are dead.
 
 
   
@@ -76,20 +77,15 @@ colPerc(table1)
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-```
-
-The chi sq test provides the exact numbers. It shows that 1831 were females and 1411 were males are in the alive group. 25 females died vs 44 males died. The odds of a female dying is (25/1831) and the odds of a male dying is (44/1411). The odds ratio of a male dying to a female is (44/1411)/(25/1831). The odds ratio is 2.3.
-
-
-```{r}
 fisher.test(table1)
 ```
 
-The fisher test gives us the odd ratio, which we also got by doing the chi sq test. We also see the confidence intervals are 1.4 to 3.9, meaning the odd ratio can go as low as 1.4 or as high as 3.9. 
+The chi sq test provides the exact numbers. It shows that 1831 were females and 1411 were males are in the alive group. 25 females died vs 44 males died. The odds of a female dying is (25/1831) and the odds of a male dying is (44/1411). The odds ratio of a male dying to a female is (44/1411)/(25/1831). The odds ratio is 2.3.The fisher test gives us the odd ratio, which we also got by doing the chi sq test. We also see the confidence intervals are 1.4 to 3.9, meaning the odd ratio can go as low as 1.4 or as high as 3.9. The fisher test tells us also  that  men were 2.3 times as likely to die than the females in this study. The p-value reveals that the chances of getting this result if there was no difference is 0.0009.
 
 ## Conclusions
 
-In conclusion, we can see a big statistical difference between males and females vs COVID. Based off our results, more males die of COVID vs females. Our p-value is very small, so therefore we reject the null hypothesis. More importantly we can see that more males die from this disease vs females.
+In conclusion, we can see a big statistical difference between males and females.Being in the results from the barchart showed 65% of those that died being male with only 35% being female. The numerical results showed that 3% of males died and 1.4% of females died. The fisher and p-value text told us men were 2.3 times as likely to die with the chances of seeing these results with no difference in 0.0009.Our p-value is very small, so therefore we reject the null hypothesis.These results show that death is not independent of sex.
+
 
 
 
